@@ -1,0 +1,101 @@
+aid: slice-ordering
+name: Slice
+review:
+  question: Does Slice expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Slice does not publish any documented public
+    API surface - REST or otherwise - for third-party developers, so there is no
+    server-push transport (WebSocket or SSE) to model. Slice runs a developer portal
+    titled "Slice Public API" at developer.slicelife.com (built on Stoplight) and a
+    separate merchant/banking portal at developer.slicebank.com, but the endpoint
+    reference is not openly rendered, there is no self-serve API-key signup, and
+    access is partner-gated. With no documented endpoints of any protocol, there is
+    nothing to capture in an AsyncAPI definition.
+findings:
+  summary: |
+    Slice does not publish a documented public WebSocket API - and, more broadly,
+    does not publish an openly documented public API of any kind. Slice is a
+    done-for-you online ordering, marketing, payments, and point-of-sale platform
+    for independent pizzerias (19,000+ shops across all 50 states). Consumers order
+    via slicelife.com and the Slice apps; owners run their shop via slice.com, the
+    Owner's Portal (owners.slicelife.com), and Slice Register (the POS). A developer
+    portal exists at developer.slicelife.com titled "Slice Public API" (Stoplight
+    project slug slice-public-api, project id 18203562583), and a separate
+    merchant/banking API portal exists at developer.slicebank.com, but neither
+    exposes an openly browsable endpoint reference, an OpenAPI download, or a
+    self-serve API-key signup flow. Integration is arranged through Slice's
+    partnerships team (partner@slicelife.com, formerly slicelife.partners which now
+    redirects to slice.com). No realtime, bidirectional, or streaming WebSocket
+    (ws:// or wss://) endpoint is documented anywhere.
+  publicApiStatus: |
+    Partner-gated. A "Slice Public API" developer portal is published on Stoplight
+    at developer.slicelife.com, but the reference content is client-side rendered
+    behind the portal app and is not openly documented or downloadable, and there is
+    no evident open API-key registration. This is a partner/merchant-integration API,
+    not an open self-serve public API.
+  endpointsModeled: true
+  endpointsSourced: false
+  endpointsNote: |
+    The four logical APIs in apis.yml (Shops, Menu, Orders, Customers) are MODELED
+    from the platform's known merchant surfaces - e.g. the Owner's Portal exposes
+    shop menu items at owners.slicelife.com/shops/{id}/menu/items. They are not taken
+    from a published Slice OpenAPI definition, because none is publicly available. No
+    concrete request/response endpoints were confirmed, so no OpenAPI, Postman, or
+    Open Collection artifacts were fabricated.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: >
+        A partner-gated "Slice Public API" portal exists at developer.slicelife.com
+        (Stoplight) and a merchant/banking portal at developer.slicebank.com, but no
+        REST endpoint reference is openly rendered or downloadable.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in Slice's developer portals.
+  businessModel: |
+    Slice charges partner pizzerias a flat per-order fee (widely reported at ~$2.25,
+    waived on orders under $10) rather than the 10-30% percentage commissions charged
+    by large marketplaces; Slice Register (the POS) adds card-processing fees (~2.5%)
+    and there are optional marketing/listing add-ons. This is merchant/platform
+    pricing, not API pricing - Slice does not publish per-call, per-order, or
+    per-location API pricing, so no Plans, RateLimits, or FinOps artifacts were
+    authored.
+sources:
+  - url: https://developer.slicelife.com/
+    type: Documentation
+    note: Slice Public API portal on Stoplight (project slug slice-public-api). Reference not openly rendered; no self-serve signup.
+  - url: https://developer.slicebank.com/
+    type: Documentation
+    note: Separate Slice merchant/banking API portal; returns 403 to anonymous fetch (gated).
+  - url: https://slice.com/
+    type: Website
+    note: Merchant-facing platform - online ordering, marketing, Slice Register POS for pizzerias.
+  - url: https://slicelife.com/
+    type: Website
+    note: Consumer-facing ordering site and apps.
+  - url: https://owners.slicelife.com/shops/0/menu/items
+    type: ApplicationUI
+    note: Owner's Portal surface exposing shop menu items (basis for the modeled Shops/Menu groupings).
+  - url: https://slice.com/pricing/
+    type: Pricing
+    note: Merchant pricing - flat per-order fee model; not API pricing.
+  - url: https://github.com/slicelife
+    type: SourceCode
+    note: Slice GitHub org - infrastructure/tooling forks only; no public API or OpenAPI repositories.
+  - url: https://blog.slicelife.com/slice-auth0/
+    type: Blog
+    note: Slice uses Auth0 as its sole identity/authentication partner for 5M+ consumer users.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket surface exists and Slice publishes no openly documented public API
+    of any protocol. The catalog entry documents the partner-gated access model
+    honestly and models four logical APIs (Shops, Menu, Orders, Customers) without
+    fabricating an OpenAPI definition or any endpoint-level artifacts.

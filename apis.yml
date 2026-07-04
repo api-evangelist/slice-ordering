@@ -1,0 +1,117 @@
+aid: slice-ordering
+url: https://raw.githubusercontent.com/api-evangelist/slice-ordering/refs/heads/main/apis.yml
+name: Slice
+kind: company
+description: Slice is a done-for-you online ordering, marketing, payments, and
+  point-of-sale platform for independent pizzerias, serving more than 19,000 shops
+  across all 50 states and 3,000+ cities. Consumers order through slicelife.com and
+  the Slice apps; shop owners run their business through slice.com, the Owner's
+  Portal (owners.slicelife.com), and the Slice Register POS. Slice does publish a
+  developer portal titled "Slice Public API" at developer.slicelife.com (built on
+  Stoplight) and a separate merchant/banking API portal at developer.slicebank.com,
+  but neither is an open, self-serve API - there is no public API-key signup and the
+  endpoint reference is not openly rendered or documented for third parties. API
+  access is partner-gated and arranged through Slice's partnerships team
+  (partner@slicelife.com). The APIs listed below are logical groupings modeled from
+  the platform's known merchant surfaces (shops, menus, orders, customers); no
+  public OpenAPI definition is available, so no specification is included.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Online Ordering
+- Food Delivery
+- Pizzerias
+- Restaurants
+- Point of Sale
+- Payments
+- SMB
+- Partner API
+created: '2026-07-04'
+modified: '2026-07-04'
+specificationVersion: '0.19'
+apis:
+- aid: slice-ordering:slice-shops-api
+  name: Slice Shops API (Modeled)
+  tags:
+  - Shops
+  - Restaurants
+  - Merchants
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.slicelife.com/
+  properties:
+  - url: https://developer.slicelife.com/
+    type: Documentation
+  description: Logical, modeled grouping for the pizzeria (shop) records that anchor
+    the Slice platform - profile, address, hours, service areas, and pickup/delivery
+    availability. Reflected in the Owner's Portal shop surfaces
+    (owners.slicelife.com/shops). No public endpoint reference is documented; access
+    is partner-gated. Endpoints are modeled, not sourced from an OpenAPI definition.
+- aid: slice-ordering:slice-menu-api
+  name: Slice Menu API (Modeled)
+  tags:
+  - Menu
+  - Items
+  - Catalog
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.slicelife.com/
+  properties:
+  - url: https://developer.slicelife.com/
+    type: Documentation
+  description: Logical, modeled grouping for a shop's menu - categories, items,
+    sizes, toppings, and pricing (the Owner's Portal exposes shop menu items at
+    owners.slicelife.com/shops/{id}/menu/items). No public endpoint reference is
+    documented; access is partner-gated. Endpoints are modeled, not sourced from an
+    OpenAPI definition.
+- aid: slice-ordering:slice-orders-api
+  name: Slice Orders API (Modeled)
+  tags:
+  - Orders
+  - Checkout
+  - Fulfillment
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.slicelife.com/
+  properties:
+  - url: https://developer.slicelife.com/
+    type: Documentation
+  description: Logical, modeled grouping for online orders placed for pickup or
+    delivery - cart, checkout, order status, and fulfillment. Central to Slice's
+    per-order commercial model (a flat per-order fee to the shop rather than a
+    percentage). No public endpoint reference is documented; access is partner-gated.
+    Endpoints are modeled, not sourced from an OpenAPI definition.
+- aid: slice-ordering:slice-customers-api
+  name: Slice Customers API (Modeled)
+  tags:
+  - Customers
+  - Accounts
+  - Loyalty
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.slicelife.com/
+  properties:
+  - url: https://developer.slicelife.com/
+    type: Documentation
+  description: Logical, modeled grouping for the diner accounts, order history, and
+    marketing/loyalty relationships that Slice manages on behalf of shops (consumer
+    identity is handled via Auth0). No public endpoint reference is documented;
+    access is partner-gated. Endpoints are modeled, not sourced from an OpenAPI
+    definition.
+common:
+- type: GitHubOrganization
+  url: https://github.com/slicelife
+- type: LinkedIn
+  url: https://www.linkedin.com/company/slice
+- type: Website
+  url: https://slicelife.com
+- type: Website
+  url: https://slice.com
+- type: Documentation
+  url: https://developer.slicelife.com/
+- type: Documentation
+  url: https://developer.slicebank.com/
+- type: SignUp
+  url: https://slice.com/get-started/
+- type: Pricing
+  url: https://slice.com/pricing/
+- url: https://blog.slicelife.com/
+  type: Blog
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

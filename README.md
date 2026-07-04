@@ -1,0 +1,79 @@
+# Slice (slice-ordering)
+
+Slice is a done-for-you online ordering, marketing, payments, and point-of-sale platform for independent pizzerias. It serves more than 19,000 shops across all 50 states and 3,000+ cities. Consumers order through [slicelife.com](https://slicelife.com) and the Slice apps; shop owners run their business through [slice.com](https://slice.com), the Owner's Portal ([owners.slicelife.com](https://owners.slicelife.com)), and the Slice Register POS.
+
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/slice-ordering/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/slice-ordering/refs/heads/main/apis.yml)
+
+## API Access Model
+
+Slice is **not** an open, self-serve API platform. It is a full-service ("done-for-you") SMB platform, so its programmatic surfaces are built for its own apps and for vetted partners rather than for open third-party development.
+
+- Slice publishes a developer portal titled **"Slice Public API"** at [developer.slicelife.com](https://developer.slicelife.com/), built on Stoplight (project slug `slice-public-api`). However, the endpoint reference is rendered client-side behind the portal app, is not openly browsable or downloadable, and there is no self-serve API-key signup.
+- A separate merchant/banking API portal exists at [developer.slicebank.com](https://developer.slicebank.com/) for Slice's financial-services surfaces; it is gated (returns 403 to anonymous requests).
+- Integration is **partner-gated** and arranged through Slice's partnerships team (`partner@slicelife.com`).
+- No public OpenAPI, Postman, or Open Collection definition is available, so none is fabricated here.
+
+The APIs below are therefore **logical, modeled groupings** derived from the platform's known merchant surfaces (for example, the Owner's Portal exposes shop menu items at `owners.slicelife.com/shops/{id}/menu/items`). They are not taken from a published Slice specification.
+
+## Tags
+
+- Online Ordering
+- Food Delivery
+- Pizzerias
+- Restaurants
+- Point of Sale
+- Payments
+- SMB
+- Partner API
+
+## Timestamps
+
+- **Created:** 2026-07-04
+- **Modified:** 2026-07-04
+
+## APIs (Modeled)
+
+### Slice Shops API (Modeled)
+
+Logical grouping for the pizzeria (shop) records that anchor the Slice platform - profile, address, hours, service areas, and pickup/delivery availability. No public endpoint reference is documented; access is partner-gated.
+
+- **Human URL:** [https://developer.slicelife.com/](https://developer.slicelife.com/)
+
+### Slice Menu API (Modeled)
+
+Logical grouping for a shop's menu - categories, items, sizes, toppings, and pricing (the Owner's Portal exposes shop menu items at `owners.slicelife.com/shops/{id}/menu/items`). No public endpoint reference is documented; access is partner-gated.
+
+- **Human URL:** [https://developer.slicelife.com/](https://developer.slicelife.com/)
+
+### Slice Orders API (Modeled)
+
+Logical grouping for online orders placed for pickup or delivery - cart, checkout, order status, and fulfillment. Central to Slice's per-order commercial model. No public endpoint reference is documented; access is partner-gated.
+
+- **Human URL:** [https://developer.slicelife.com/](https://developer.slicelife.com/)
+
+### Slice Customers API (Modeled)
+
+Logical grouping for the diner accounts, order history, and marketing/loyalty relationships that Slice manages on behalf of shops (consumer identity is handled via Auth0). No public endpoint reference is documented; access is partner-gated.
+
+- **Human URL:** [https://developer.slicelife.com/](https://developer.slicelife.com/)
+
+## Pricing (Platform, not API)
+
+Slice's pricing is a merchant/platform model, not API pricing. Slice charges partner pizzerias a flat **per-order fee** (widely reported at ~$2.25, waived on orders under $10) instead of the 10-30% percentage commissions charged by large marketplaces. Slice Register (the POS) adds card-processing fees (~2.5%), with optional marketing and listing-management add-ons. Slice does not publish per-call, per-order, or per-location **API** pricing, so no Plans, Rate Limits, or FinOps artifacts are included.
+
+## Common Properties
+
+- [GitHub Organization](https://github.com/slicelife)
+- [LinkedIn](https://www.linkedin.com/company/slice)
+- [Website (Consumer)](https://slicelife.com)
+- [Website (Merchant)](https://slice.com)
+- [Developer Portal](https://developer.slicelife.com/)
+- [Merchant/Banking Developer Portal](https://developer.slicebank.com/)
+- [Sign Up](https://slice.com/get-started/)
+- [Pricing](https://slice.com/pricing/)
+- [Blog](https://blog.slicelife.com/)
+
+## Maintainers
+
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
