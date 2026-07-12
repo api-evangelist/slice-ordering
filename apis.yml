@@ -94,6 +94,8 @@ apis:
     access is partner-gated. Endpoints are modeled, not sourced from an OpenAPI
     definition.
 common:
+- type: DomainSecurity
+  url: security/slice-ordering-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/slicelife
 - type: LinkedIn
