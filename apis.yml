@@ -15,7 +15,18 @@ description: Slice is a done-for-you online ordering, marketing, payments, and
   (partner@slicelife.com). The APIs listed below are logical groupings modeled from
   the platform's known merchant surfaces (shops, menus, orders, customers); no
   public OpenAPI definition is available, so no specification is included.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/slice-ordering.png
 tags:
 - Online Ordering
 - Food Delivery
