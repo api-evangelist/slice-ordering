@@ -31,6 +31,15 @@ tags:
 - Online Ordering
 - Food Delivery
 - Pizzerias
+- Restaurant
+- Point-of-Sale
+- Payments
+- SMB
+- Partner API
+tags_raw:
+- Online Ordering
+- Food Delivery
+- Pizzerias
 - Restaurants
 - Point of Sale
 - Payments
@@ -43,6 +52,10 @@ apis:
 - aid: slice-ordering:slice-shops-api
   name: Slice Shops API (Modeled)
   tags:
+  - Shops
+  - Restaurant
+  - Merchants
+  tags_raw:
   - Shops
   - Restaurants
   - Merchants
@@ -59,6 +72,10 @@ apis:
 - aid: slice-ordering:slice-menu-api
   name: Slice Menu API (Modeled)
   tags:
+  - Menus
+  - Item
+  - Catalog
+  tags_raw:
   - Menu
   - Items
   - Catalog
@@ -75,6 +92,10 @@ apis:
 - aid: slice-ordering:slice-orders-api
   name: Slice Orders API (Modeled)
   tags:
+  - Order
+  - Checkout
+  - Fulfillment
+  tags_raw:
   - Orders
   - Checkout
   - Fulfillment
@@ -91,6 +112,10 @@ apis:
 - aid: slice-ordering:slice-customers-api
   name: Slice Customers API (Modeled)
   tags:
+  - Customers
+  - Account
+  - Loyalty
+  tags_raw:
   - Customers
   - Accounts
   - Loyalty
