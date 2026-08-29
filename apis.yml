@@ -15,6 +15,17 @@ description: Slice is a done-for-you online ordering, marketing, payments, and
   (partner@slicelife.com). The APIs listed below are logical groupings modeled from
   the platform's known merchant surfaces (shops, menus, orders, customers); no
   public OpenAPI definition is available, so no specification is included.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
